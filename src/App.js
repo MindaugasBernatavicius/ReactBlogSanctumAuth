@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { AuthProvider } from "./components/AuthContext";
+import Blogpost from "./components/Blogpost";
+import Blogposts from "./components/Blogposts";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<BrowserRouter>
+			<AuthProvider>
+				<Header />
+				<div className="container py-3">
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/home" element={<Home />} />
+						<Route path="/posts" element={<Blogposts />} />
+						<Route path="/posts/:id" element={<Blogpost />} />
+						<Route path="/posts/create" element={<Blogpost />} />
+						<Route path="/login" element={<Login />} />
+						<Route path="/register" element={<Register />} />
+					</Routes>
+				</div>
+			</AuthProvider>
+		</BrowserRouter>
+	);
 }
 
 export default App;
