@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
 	const navigate = useNavigate();
 	const [user, setUser] = useState(null);
 	const [token, setToken] = useState(null);
-	const url = "https://laravel-bit1.herokuapp.com/api/logout";
+	const url = "https://laravel-1103-api.herokuapp.com/api/logout";
 	const hs = { Accept: "application/json", Authorization: `Bearer ${token}` };
 	const req = { method: "POST", headers: hs };
 
