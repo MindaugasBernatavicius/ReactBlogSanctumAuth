@@ -10,7 +10,7 @@ function BlogPosts() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		fetch("https://laravel-bit1.herokuapp.com/api/posts")
+		fetch("https://laravel-1103-api.herokuapp.com/api/posts")
 			.then((res) => res.json())
 			.then(
 				(res) => {
