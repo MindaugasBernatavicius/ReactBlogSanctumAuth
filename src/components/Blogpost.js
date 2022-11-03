@@ -14,7 +14,7 @@ const Blogpost = () => {
 		"Content-Type": "application/json",
 		Authorization: `Bearer ${auth.getToken()}`,
 	};
-	const url = `https://laravel-bit1.herokuapp.com/api/posts`;
+	const url = `https://laravel-1103-api.herokuapp.com/api/posts`;
 
 	useEffect(() => {
 		if (id)
