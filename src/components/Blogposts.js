@@ -25,7 +25,7 @@ function BlogPosts() {
 	}, []);
 
 	const deletePost = (id, e) => {
-		fetch("https://laravel-bit1.herokuapp.com/api/posts/" + id, {
+		fetch("https://laravel-1103-api.herokuapp.com/api/posts/" + id, {
 			method: "DELETE",
 			headers: {
 				Accept: "application/json",
